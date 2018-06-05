@@ -1,0 +1,59 @@
+<html>
+<head>
+	<style type="text/css">
+		.titulo1{
+			font-size: 80px;
+			font-family: fantasy;
+			color: red;
+		}
+		.titulo2{
+			font-size: 90px;
+			font-family: fantasy;
+			color: green;
+		}
+		.titulo3{
+			font-size: 100px;
+			font-family: fantasy;
+			color: navy;
+		}
+		.titulo4{
+			font-size: 110px;
+			font-family: fantasy;
+			color: yellow;
+		}
+	</style>
+
+	<title>Singular DEV</title>
+</head>
+
+<body>
+
+	<h1 id="encabezado" class="">Buenos Dias!!!</h1>
+
+	<form>
+		<label for= "inputTexto">Texto a cambiar:</label>
+		<input id="textoCambio" type="text" name="inputTexto" placeholder="Escribir Texto aqui">
+		<input type="button" name="" value="Cambiar" onclick="cambio();">
+	</form>
+
+		<script type="text/javascript">
+		    cont=0;
+			var cambio= function(){
+									var encabezado= document.getElementById("encabezado");
+									var textoCambio= document.getElementById("textoCambio").value;
+									cont++;
+			
+									if(textoCambio == "" ){
+											                encabezado.className ="titulo"+cont;
+														
+														   }else{
+																  encabezado.className ="titulo"+cont;
+															      document.getElementById("encabezado").innerHTML = textoCambio;
+															      
+																}
+									if(cont==4){cont=0;}
+
+									}
+	    </script>
+
+</body>
