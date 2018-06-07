@@ -33,27 +33,34 @@
 	<form>
 		<label for= "inputTexto">Texto a cambiar:</label>
 		<input id="textoCambio" type="text" name="inputTexto" placeholder="Escribir Texto aqui">
-		<input type="button" name="" value="Cambiar" onclick="cambio();">
+		<input type="button" id="btnCambiar" value="Cambiar">
 	</form>
 
 		<script type="text/javascript">
-		    cont=0;
-			var cambio= function(){
-									var encabezado= document.getElementById("encabezado");
-									var textoCambio= document.getElementById("textoCambio").value;
-									cont++;
-			
-									if(textoCambio == "" ){
-											                encabezado.className ="titulo"+cont;
 														
-														   }else{
-																  encabezado.className ="titulo"+cont;
-															      document.getElementById("encabezado").innerHTML = textoCambio;
-															      
-																}
-									if(cont==4){cont=0;}
+			(function(){ 
 
-									}
+						var cambio= function(){
+												var encabezado= document.getElementById("encabezado");
+												var textoCambio= document.getElementById("textoCambio").value;
+												cont++;
+						
+												if(textoCambio == "" ){
+														                encabezado.className ="titulo"+cont;
+																	
+																	   }else{
+																			  encabezado.className ="titulo"+cont;
+																		      document.getElementById("encabezado").innerHTML = textoCambio;
+																	      
+																			}
+												if(cont==4){cont=0;}
+											}
+						var cont=0;
+						var boton= document.getElementById("btnCambiar");
+						boton.addEventListener("click", cambio);
+
+					}())
+		   
 	    </script>
 
 </body>
